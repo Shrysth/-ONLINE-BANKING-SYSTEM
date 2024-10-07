@@ -23,7 +23,15 @@ public class User {
     private String username;
     private String password;
     
-    // Constructor, getters, setters, etc.
+    public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	// Constructor, getters, setters, etc.
     public User(String username, String password) {
 	username=this.username;
 	password=this.password;
@@ -33,5 +41,7 @@ public class User {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

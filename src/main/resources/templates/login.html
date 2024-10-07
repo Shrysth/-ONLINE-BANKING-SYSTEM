@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(event) {
+                let username = $('#username').val();
+                let password = $('#password').val();
+                if (username === '' || password === '') {
+                    event.preventDefault();
+                    alert('Please fill in both fields.');
+                }
+            });
+        });
+    </script>
+</head>
+<body class="container my-5">
+    <h1 class="mb-4 text-center">Login</h1>
+    <form id="loginForm" th:action="@{/api/users/login}" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" />
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</body>
+</html>
