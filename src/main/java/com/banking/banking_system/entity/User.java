@@ -26,7 +26,6 @@ public class User {
     public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -36,12 +35,8 @@ public class User {
 	username=this.username;
 	password=this.password;
 	}
-
 	public User orElseThrow() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-
 }
