@@ -3,6 +3,7 @@ package com.banking.banking_system.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,8 @@ import com.banking.banking_system.entity.Account;
 import com.banking.banking_system.entity.User;
 import com.banking.banking_system.service.AccountService;
 import com.banking.banking_system.service.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class FrontendController {
@@ -33,11 +36,10 @@ public class FrontendController {
     }
 
     @GetMapping("/accounts")
-    public String showAccountsPage() {
+    public String showAccountsPage(HttpSession session) {
         return "accounts";
     }
     
-
     @GetMapping("/")
     public String home() {
         return "home";

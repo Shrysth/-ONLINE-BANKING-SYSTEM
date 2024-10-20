@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.banking.banking_system.entity.User;
 import com.banking.banking_system.service.UserService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -34,13 +36,14 @@ public class UserController {
 
     
     @PostMapping("/login")
-    public ModelAndView login(@RequestParam String username, @RequestParam String password) {
+    public ModelAndView login(@RequestParam String username, @RequestParam String password, HttpSession session) {
        Optional<User> userOptional = userService.findByUsername(username);
     if (userOptional.isPresent()) { 
             User user = userOptional.get();
-           if (user.getPassword().equals(password)) {
-               ModelAndView mav = new ModelAndView("redirect:/accounts");
-               return mav;
+           if (user.getPassword().equals(password)) { 
+                ModelAndView mav = new ModelAndView("redirect:/accounts");
+                session.setAttribute("username", username);
+                return mav;
            } else {
                ModelAndView mav = new ModelAndView("login");
                mav.addObject("error", "Invalid username or password");
