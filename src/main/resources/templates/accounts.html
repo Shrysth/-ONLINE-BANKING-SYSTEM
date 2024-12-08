@@ -2,20 +2,106 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>accounts</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>accounts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="container my-5">
-  <h1>welcome to accounts</h1>
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
+    </a>
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="http://localhost:8083/">Online Banking System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="http://localhost:8083/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu text-light">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item text-light">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success text-light" type="submit">Search</button>
+        </form>
+      </div>
+      <a th:href="@{/login}" class="btn btn-outline-primary text-light">Login</a>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <h1 class="bg-primary">Welcome to Accounts Page,</h1>
+    <h1><br> <span th:text="${username}">user</span></h1>
+
+    <dl class="row">
+      <dt class="col-sm-3">Name:</dt>
+      <dd class="col-sm-9"><span th:text="${fullname}">A description list is perfect for defining terms.</span></dd>
+
+      <dt class="col-sm-3">Address:</dt>
+      <dd class="col-sm-9">
+        <span th:text="${Address}">Definition for the term.</span>
+      </dd>
+
+      <dt class="col-sm-3">Branch Id:</dt>
+      <dd class="col-sm-9"><span th:text="${branchId}">This definition is short, so no extra paragraphs or
+          anything.</span></dd>
+
+      <dt class="col-sm-3 text-truncate">Branch Name:</dt>
+      <dd class="col-sm-9"><span th:text="${branchName}">This can be useful when space is tight. Adds an ellipsis at the
+          end.</span></dd>
+    </dl>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body">
+        <h5 class="card-title">Primary card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a th:href="@{/accounts/create}" method="post" class="btn btn-primary">showAccount</a>
+      </div>
+    </div>
+
+    <a th:href="@{/accounts/show}" method="post" class="btn-outline-primary">showAccount</a>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Primary card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a th:href="@{/accounts/create}" method="post" class="btn btn-primary">showAccount</a>
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-body-secondary">
+      2 days ago
     </div>
   </div>
 
 </body>
+
 </html>

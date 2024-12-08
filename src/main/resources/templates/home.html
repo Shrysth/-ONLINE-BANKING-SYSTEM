@@ -8,9 +8,12 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" loading="lazy">
+    </a>
     <div class="container-fluid">
-      <a class="navbar-brand" href="http://localhost:8083/">Online Banking System</a>
+      <a class="navbar-brand text-light" href="http://localhost:8083/">Online Banking System</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,16 +21,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:8083/">Home</a>
+            <a class="nav-link active text-light" aria-current="page" href="http://localhost:8083/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link text-light" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu text-light">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
@@ -36,26 +39,29 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item text-light">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-success text-light" type="submit">Search</button>
         </form>
       </div>
-      <a th:href="@{/login}" class="btn btn-outline-primary">Login</a>
+      <a th:href="@{/login}" class="btn btn-outline-primary text-light">Login</a>
     </div>
   </nav>
 
-  <h1 class="mb-4 text-center">Welcome to Online Banking System</h1>
+
+<div class="">
+  <br>
+  <h1 class="mb-4 text-center display-4">Welcome to Online Banking System</h1>
   <div class="text-center">
-    <p class="lead">Manage your bank accounts with ease. Log in or register to get started.</p>
-    <a th:href="@{/login}" class="btn btn-primary mx-2">Login</a>
+    <p class="lead h3">Manage your bank accounts with ease. Log in or register to get started.</p>
+    <a th:href="@{/login}" class="btn btn-primary mx-2 display-4">Login</a>
     <a th:href="@{/register}" class="btn btn-success mx-2">Register</a>
   </div>
-  <div class="mt-5">
+  <div class="mt-5 container my-5 h1">
     <h3>Features:</h3>
     <ul>
       <li>Secure account access</li>
@@ -63,6 +69,10 @@
       <li>Easy-to-use interface for managing deposits and withdrawals</li>
       <li>Track account balances and recent transactions</li>
     </ul>
+  </div>
+
+    <p class="container my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum iure in assumenda exercitationem eos laudantium repellat adipisci at harum a sint amet aspernatur, saepe dolorem, impedit quod! Laudantium, asperiores numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis hic atque ipsam nobis impedit porro quia deserunt. Cumque soluta facere animi dolores harum consequatur eveniet ut, earum accusantium repellendus architecto!</p>
+
     <!-- <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">

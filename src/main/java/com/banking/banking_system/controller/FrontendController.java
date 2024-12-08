@@ -1,20 +1,9 @@
 package com.banking.banking_system.controller;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.apache.coyote.Request;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.mapping.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.banking.banking_system.entity.Account;
-import com.banking.banking_system.entity.User;
-import com.banking.banking_system.service.AccountService;
-import com.banking.banking_system.service.UserService;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -36,18 +25,22 @@ public class FrontendController {
     }
 
     @GetMapping("/accounts")
-    public String showAccountsPage(HttpSession session) {
+    public String AccountsPage(HttpSession session, Model model) {
+        String username = (String) session.getAttribute("username");
+        String fullname = (String) session.getAttribute("fullname");
+        String Address = (String) session.getAttribute("Address");
+        String branchId = (String) session.getAttribute("branchId");
+        String branchName = (String) session.getAttribute("branchName");
+        model.addAttribute("username", username);
+        model.addAttribute("fullname", fullname);
+        model.addAttribute("Address", Address);
+        model.addAttribute("branchId", branchId);
+        model.addAttribute("branchName", branchName);
         return "accounts";
     }
-    
+
     @GetMapping("/")
     public String home() {
         return "home";
-    }
-
-    @Autowired
-    private UserService userService;
-    private AccountService accountService;
-
-    
+    }    
 }

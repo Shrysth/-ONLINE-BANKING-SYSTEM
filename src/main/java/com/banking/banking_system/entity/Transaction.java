@@ -35,4 +35,8 @@ public class Transaction {
     private LocalDateTime transactionDate = LocalDateTime.now();
 
     // Constructor, getters, setters, etc.
+    
+    public Transaction() {
+    	
+    }
 }

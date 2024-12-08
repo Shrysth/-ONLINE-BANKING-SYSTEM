@@ -7,12 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class User {
@@ -28,18 +26,22 @@ public class User {
 	private String branchId;
 	private String branchName;
 
+	public User(){
+
+	}
+	
 	String branchName(){
 		if (branchId == "00001") {
-			branchName="homeBranch";
+			this.branchName="homeBranch";
 		}
 		if (branchId == "00002") {
-			branchName="mainBranch";
+			this.branchName="mainBranch";
 		}
 		if (branchId == "00003") {
-			branchName="foreignBranch";
+			this.branchName="foreignBranch";
 		}
 		else{
-			branchName="null";
+			this.branchName="null";
 		}
 		return branchName;
 	}
@@ -49,7 +51,7 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public User(String username, String password, String fullname, String Address, String branchId) {
 		this.username = username;
 		this.password = password;
@@ -61,5 +63,41 @@ public class User {
 	public User orElseThrow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getFullname() {
+		return fullname;
+	}
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
+	}
+	public String getAddress() {
+		return Address;
+	}
+	public void setAddress(String address) {
+		Address = address;
+	}
+	public String getBranchId() {
+		return branchId;
+	}
+	public void setBranchId(String branchId) {
+		this.branchId = branchId;
+	}
+	public String getBranchName() {
+		return branchName();
+	}
+	public void setBranchName(String branchName) {
+		this.branchName = branchName;
 	}
 }
